@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 05f45b37b2a74a54fbe239bb6a910c31
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Gotham Narrow
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f133d6fec61ee3a4b9587909afe46eae, type: 3}
+  - {fileID: 12800000, guid: 513b681cbdc6bf546b6b50d3f764d17d, type: 3}
+  - {fileID: 12800000, guid: b491d73fa149f3f4d907ba2c4b9a429b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

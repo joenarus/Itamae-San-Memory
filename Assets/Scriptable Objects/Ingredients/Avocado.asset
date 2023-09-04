@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Avocado
   m_EditorClassIdentifier: 
   name: Avocado
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 97a340bb6fb772c45bcaac869f156e80, type: 3}

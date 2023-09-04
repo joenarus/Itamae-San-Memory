@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Rice & Nori
   m_EditorClassIdentifier: 
   name: Rice & Nori
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 6e0381d7857c3634086788173dddf0ef, type: 3}

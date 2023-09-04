@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: b9378a32204d96d448b8a589638d3d7d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Tungsten
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 22eea654ad0db9e4cb84f4a6c53de766, type: 3}
+  - {fileID: 12800000, guid: 46ef96f2288260840a07e47efcb8b67d, type: 3}
+  - {fileID: 12800000, guid: d46ce0068adf55a4581a851255b62539, type: 3}
+  - {fileID: 12800000, guid: 41e6efeeeb431c24993fa7d4316c4656, type: 3}
+  - {fileID: 12800000, guid: c1fa86d1496c9724abaf5add385dd342, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

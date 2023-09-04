@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75494ec41e091e4ea7d970261f49413, type: 3}
   m_Name: Cucumber Roll
   m_EditorClassIdentifier: 
-  name: 
+  name: Cucumber Roll
   sprite: {fileID: 0}
-  price: 0
+  price: 5
   ingredients: []

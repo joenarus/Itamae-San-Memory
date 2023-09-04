@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: d3f27fa8ff8913f49a724d295fea3d7f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Idlewild
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a0477d1df77aba243915e234258d4546, type: 3}
+  - {fileID: 12800000, guid: 323c75e66b0a4e84f94f13d3b02448aa, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
