@@ -21,8 +21,12 @@ public class IngredientDisplay : MonoBehaviour
     void Start()
     {
         nameText.text = card.name;
-
         mainSprite.sprite = card.sprite;
+        if (isFaceDown)
+        {
+            front.SetActive(false);
+            back.SetActive(true);
+        }
     }
 
     public void FlipCard()
