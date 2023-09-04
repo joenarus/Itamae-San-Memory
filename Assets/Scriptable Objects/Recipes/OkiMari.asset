@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e75494ec41e091e4ea7d970261f49413, type: 3}
-  m_Name: Cucumber Roll
+  m_Name: OkiMari
   m_EditorClassIdentifier: 
-  name: Cucumber Roll
-  sprite: {fileID: 21300000, guid: 1466c082ee940e84482ce14b972a91b8, type: 3}
-  price: 5
+  name: Okimari
+  sprite: {fileID: 21300000, guid: bfe14d89121cc9a48967d39ee4f11c8f, type: 3}
+  price: 14
   ingredients:
   - {fileID: 11400000, guid: 3dde6a3496e2e094a831f12bb60e4e3b, type: 2}
-  - {fileID: 11400000, guid: 6ed23a3190eb54b4b822e67680f028c5, type: 2}
-  - {fileID: 11400000, guid: 0c01453d02e8e21469ae86fe013e288b, type: 2}
+  - {fileID: 11400000, guid: c42153b6289992b4688bdbd226def169, type: 2}
+  - {fileID: 11400000, guid: 686a12c4041e994498b100e26cb28ea9, type: 2}
+  - {fileID: 11400000, guid: 32a487cb6c0c67d4c83b4ed714eb7b34, type: 2}
