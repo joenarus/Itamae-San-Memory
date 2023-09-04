@@ -31,8 +31,6 @@ public class RecipeDisplay : MonoBehaviour
         mainSprite.sprite = card.sprite;
         priceText.text = "$" + card.price;
         bool isEvenNumberOfIngredients = card.ingredients.Length % 2 == 0;
-        Debug.Log(card.ingredients.Length / 2);
-        Debug.Log(0 - (((ingredientImagePadding / 2) + ingredientImageSize) * (card.ingredients.Length / 2)));
         int startingX = 0 - ((ingredientImageSize + ingredientImagePadding) * (card.ingredients.Length / 2));
         startingX += isEvenNumberOfIngredients ? (ingredientImagePadding / 2) + (ingredientImageSize / 2) : 0;
         
