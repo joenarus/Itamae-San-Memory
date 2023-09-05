@@ -8,9 +8,20 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public List<IngredientCard> ingredientLibrary;
-    public List<IngredientCard> recipeLibrary;
     public List<IngredientCard> ingredientDeck;
+    public List<RecipeCard> recipeLibrary;
     public List<RecipeCard> recipeDeck;
+
+    public GameObject IngredientBoard;
+    public GameObject IngredientCardPrefab;
+
+    public GameObject RecipeBoard;
+    public GameObject RecipeCardPrefab;
+
+    public int revealedRecipeCount;
+
+    private Queue<RecipeCard> recipeQueue;
+    
 
     // Handles how many of each ingredient are used in the game
     public Dictionary<string, int> ingredientCardCatalog = new Dictionary<string, int>()
@@ -39,15 +50,19 @@ public class GameManager : MonoBehaviour
     // Handles how many of each recipe are used in the game
     public Dictionary<string, int> recipeCardCatalog = new Dictionary<string, int>()
     {
-        { "Cucumber Roll", 20 },
+        { "Cucumber Roll", 2 },
+        { "Spider Roll", 2 },
+        { "Okimari", 2 },
+
     };
     // Start is called before the first frame update
     void Start()
     {
         CreateIngredientDeck();
-        Setup();
+        CreateRecipeDeck();
+        ShuffleIngredientDeck();
         ShuffleRecipeDeck();
-        createMarket();
+        Setup();
     }
 
     void CreateIngredientDeck ()
@@ -57,7 +72,10 @@ public class GameManager : MonoBehaviour
             ingredientDeck = new List<IngredientCard>();
             for (int i = 0; i < ingredientLibrary.Count; i++)
             {
-                ingredientDeck.AddRange(Enumerable.Repeat(0, ingredientCardCatalog[ingredientLibrary[i].name]).Select(x => ingredientLibrary[i]));
+                if (ingredientCardCatalog.ContainsKey(ingredientLibrary[i].name))
+                {
+                    ingredientDeck.AddRange(Enumerable.Repeat(0, ingredientCardCatalog[ingredientLibrary[i].name]).Select(x => ingredientLibrary[i]));
+                }
             }
         }
     }
@@ -69,14 +87,38 @@ public class GameManager : MonoBehaviour
             recipeDeck = new List<RecipeCard>();
             for (int i = 0; i < recipeLibrary.Count; i++)
             {
-                recipeDeck.AddRange(Enumerable.Repeat(0, recipeCardCatalog[recipeLibrary[i].name]).Select(x => recipeLibrary[i]));
+                if(recipeCardCatalog.ContainsKey(recipeLibrary[i].name))
+                {
+                    recipeDeck.AddRange(Enumerable.Repeat(0, recipeCardCatalog[recipeLibrary[i].name]).Select(x => recipeLibrary[i]));
+                }
             }
         }
     }
 
+    
+    // Sets up the ingredient board with prefabs
     void Setup()
     {
-        
+        for (int i = 0; i < ingredientDeck.Count; i++)
+        {
+            GameObject current = Instantiate(IngredientCardPrefab, IngredientBoard.transform);
+            current.GetComponent<IngredientDisplay>().card = ingredientDeck[i];
+        }
+        for(int i = 0; i < revealedRecipeCount; i++)
+        {
+            DrawRecipeCard();
+        }
+    }
+
+    public void ShuffleIngredientDeck()
+    {
+        for (int i = ingredientDeck.Count - 1; i > 0; --i)
+        {
+            int j = UnityEngine.Random.Range(0, i + 1);
+            IngredientCard card = ingredientDeck[j];
+            ingredientDeck[j] = ingredientDeck[i];
+            ingredientDeck[i] = card;
+        }
     }
 
     public void ShuffleRecipeDeck()
@@ -88,25 +130,21 @@ public class GameManager : MonoBehaviour
             recipeDeck[j] = recipeDeck[i];
             recipeDeck[i] = card;
         }
+
+        recipeQueue = new Queue<RecipeCard>(recipeDeck);
     }
 
-    public void createMarket()
+    public void DrawRecipeCard()
     {
-        //Market setup
-        //for (int i = 0; i < players.Count * 3; i++)
-        //{
-        //    GameObject selection = GameObject.Instantiate(selectionPrefab, new Vector3(market.position.x, market.transform.position.y - (i * 252), 0), Quaternion.identity, market); //instantiate market prefab
-        //    selection.name = "Selection (" + i + ")"; // index names
-        //    for (int j = 0; j < 9; j++)
-        //    {
-        //        Transform slot = selection.transform.Find("CardSlot (" + j + ")");
-        //        IngredientCard card = deck[0];
-        //        Debug.Log(card.name);
-        //        GameObject cardToAdd = GameObject.Instantiate(cardPrefab, slot);
-        //        cardToAdd.GetComponent<CardDisplay>().card = card;
-        //        deck.RemoveAt(0);
-        //    }
-        //}
+        Debug.Log(recipeQueue);
+        RecipeCard drawnCard = recipeQueue.Dequeue();
+        GameObject obj = Instantiate(RecipeCardPrefab, RecipeBoard.transform);
+        obj.GetComponent<RecipeDisplay>().card = drawnCard;
+    }
+
+    public void CompleteRecipe()
+    {
+
     }
 
 

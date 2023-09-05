@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e75494ec41e091e4ea7d970261f49413, type: 3}
-  m_Name: OkiMari
+  m_Name: Okimari
   m_EditorClassIdentifier: 
   name: Okimari
   sprite: {fileID: 21300000, guid: bfe14d89121cc9a48967d39ee4f11c8f, type: 3}
