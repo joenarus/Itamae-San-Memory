@@ -26,6 +26,12 @@ public class CardGridLayout : LayoutGroup
         float cardWidth = (parentWidth - spacing.x * (columns - 1)) / columns;
         float cardHeight = cardWidth;
 
+        if(cardHeight * rows + spacing.y * (columns - 1) > parentHeight)
+        {
+            cardHeight = (parentHeight - spacing.y * (rows - 1)) / rows;
+            cardWidth = cardHeight;
+        }
+
         cardSize = new Vector2(cardWidth, cardHeight);
 
         padding.left = Mathf.FloorToInt((parentWidth - columns * cardWidth - spacing.x * (columns - 1)) / 2);

@@ -212,15 +212,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
+    m_Left: 16
     m_Right: 0
-    m_Top: -17
+    m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
   rows: 2
   columns: 2
   spacing: {x: 20, y: 20}
-  cardSize: {x: 300, y: 300}
+  cardSize: {x: 283.53723, y: 283.53723}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
